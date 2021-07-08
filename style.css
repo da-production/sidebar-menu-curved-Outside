@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+    --main-bg-color: #004dfb;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(77 91 249 / 26%);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #3947e2;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #fff;
+}
+
+.navigation {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-sizing: initial;
+    border-left: 5px solid var(--main-bg-color);
+    background-color: var(--main-bg-color);
+    transition: width 0.3s 0.05s;
+    overflow-x: hidden;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    padding-top: 40px;
+}
+
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.navigation ul li.active {
+    background-color: #fff;
+}
+
+.navigation ul li.active b:nth-child(1) {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 100%;
+    height: 20px;
+    background-color: #fff;
+}
+
+.navigation ul li.active b:nth-child(1)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-bottom-right-radius: 20px;
+    background-color: var(--main-bg-color);
+    width: 100%;
+    height: 100%;
+}
+
+.navigation ul li.active b:nth-child(2) {
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 100%;
+    height: 20px;
+    background-color: #fff;
+}
+
+.navigation ul li.active b:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top-right-radius: 20px;
+    background-color: var(--main-bg-color);
+    width: 100%;
+    height: 100%;
+}
+
+.navigation ul li.active a {
+    color: #333;
+}
+
+.navigation ul li a {
+    position: relative;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.navigation ul li a .icon icon-icon {
+    font-size: 1.5em;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding-left: 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: normal;
+    transition: 0.2s;
+}
+
+.toogle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    height: 60px;
+    width: 60px;
+    background-color: var(--main-bg-color);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 50px #d8d8d8;
+}
+
+.toogle.active {
+    background-color: #fff;
+}
+
+.toogle.active ion-icon {
+    color: #333;
+}
+
+.toogle ion-icon {
+    color: #fff;
+    font-size: 1.5em;
+    display: none;
+}
+
+.toogle ion-icon.open,
+.toogle.active ion-icon.close {
+    display: block;
+}
+
+.toogle ion-icon.close,
+.toogle.active ion-icon.open {
+    display: none;
+}
+
+.navigation.responsive {
+    width: 70px;
+}
+
+.navigation.responsive ul li a .title {
+    padding-left: 100px;
+    color: transparent;
+}
